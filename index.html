@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thiago Sampaio - Portfólio Profissional</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Roboto:wght@300;400;500;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Toolbar / Header -->
+    <header class="app-header">
+      <div class="file-meta">
+        <div class="doc-icon">
+          <i data-lucide="file-text"></i>
+        </div>
+        <div class="file-info">
+          <span class="file-name">Portfólio - Thiago Sampaio</span>
+          <span class="file-status">Modo Leitura • Salvo automaticamente</span>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <!-- Font Family -->
+        <select class="tool-select" id="fontSelect" title="Fonte">
+          <option value="'Times New Roman', 'Times', serif" selected>Times New Roman</option>
+          <option value="'Merriweather', serif">Merriweather</option>
+          <option value="'Lora', serif">Lora</option>
+          <option value="'Crimson Text', serif">Crimson Text</option>
+          <option value="'Source Serif 4', serif">Source Serif</option>
+          <option value="'PT Serif', serif">PT Serif</option>
+          <option value="'Playfair Display', serif">Playfair Display</option>
+          <option value="'Libre Baskerville', serif">Libre Baskerville</option>
+          <option value="'Roboto', sans-serif">Roboto</option>
+          <option value="'Inter', sans-serif">Inter</option>
+          <option value="'JetBrains Mono', monospace">JetBrains Mono</option>
+        </select>
+
+        <div class="tool-separator"></div>
+
+        <!-- Font Size -->
+        <button class="tool-btn" onclick="adjustFontSize(-1)">
+          <i data-lucide="minus" class="tool-icon"></i>
+        </button>
+        <span class="font-size-display" id="fontSizeVal">11</span>
+        <button class="tool-btn" onclick="adjustFontSize(1)">
+          <i data-lucide="plus" class="tool-icon"></i>
+        </button>
+
+        <div class="tool-separator"></div>
+
+        <!-- Highlighter -->
+        <button class="tool-btn" id="btnHighlight" onclick="toggleHighlighter()" title="Ferramenta Marca-texto">
+          <i data-lucide="highlighter" class="tool-icon"></i>
+        </button>
+
+        <div class="tool-separator"></div>
+
+        <!-- Language -->
+        <button class="tool-btn active" id="lang-pt" onclick="setLanguage('pt')">PT</button>
+        <button class="tool-btn" id="lang-en" onclick="setLanguage('en')">EN</button>
+
+        <div class="tool-separator"></div>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle" id="theme-toggle" title="Alternar tema">
+          <i data-lucide="moon" id="theme-icon"></i>
+        </button>
+      </div>
+
+      <div class="actions-area">
+        <button class="action-btn" onclick="downloadPDF()">
+          <i data-lucide="download" class="btn-icon"></i>
+          Baixar PDF
+        </button>
+      </div>
+    </header>
+
+    <!-- Document Canvas -->
+    <main class="canvas-area">
+      <div class="pages-container">
+        <div class="document-body" id="content-area">
+          <!-- PORTUGUESE CONTENT -->
+          <div id="doc-pt">
+            <header class="cv-header">
+              <div class="cv-name">Thiago de Oliveira Sampaio</div>
+              <div class="cv-contact">
+                <span class="contact-item">
+                  <i data-lucide="map-pin" class="contact-icon"></i>
+                  Fortaleza, Ceará
+                </span>
+                <span class="contact-item">
+                  <i data-lucide="phone" class="contact-icon"></i>
+                  (85) 99123-8295
+                </span>
+                <a href="mailto:thiagooliveira1039@gmail.com" class="contact-item">
+                  <i data-lucide="mail" class="contact-icon"></i>
+                  thiagooliveira1039@gmail.com
+                </a>
+              </div>
+              <div class="cv-contact" style="margin-top: 8px">
+                <a href="https://linkedin.com/in/thiago-de-oliveira-sampaio" target="_blank" class="contact-item contact-link">
+                  <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                  linkedin.com/in/thiago-de-oliveira-sampaio
+                </a>
+                <a href="https://github.com/Skaduhs5232" target="_blank" class="contact-item contact-link">
+                  <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  github.com/Skaduhs5232
+                </a>
+              </div>
+            </header>
+
+            <section class="cv-section">
+              <div class="cv-section-title">
+                <i data-lucide="user" class="section-icon"></i>
+                Resumo Profissional
+              </div>
+              <p>
+                Desenvolvedor Full Stack graduado em Ciência da Computação, com experiência prática na coordenação de projetos e liderança técnica. Sólida atuação com Java (Spring Boot), Go (Golang) e Angular/TypeScript, focada na criação de plataformas web escaláveis. Expertise na integração de soluções de Inteligência Artificial (OCR, TTS, Visão Computacional) para automação de processos.
+                Profissional com inglês avançado, orientado a metodologias ágeis e inovação tecnológica.
+              </p>
+            </section>
+
+            <section class="cv-section">
+              <div class="cv-section-title">
+                <i data-lucide="briefcase" class="section-icon"></i>
+                Experiência Profissional
+              </div>
+
+              <div class="cv-item">
+                <div class="cv-item-top">
+                  <span class="cv-role">Desenvolvedor de Software Full Stack Júnior</span>
+                  <span class="cv-date">jan/2025 – Atual</span>
+                </div>
+                <div class="cv-company">UniChristus | Fortaleza, Ceará</div>
+                <div class="cv-desc">
+                  <ul>
+                    <li><strong>Liderança Técnica:</strong> Atuação na coordenação de projetos estratégicos, definindo arquitetura de software e apoiando a equipe no ciclo de desenvolvimento ágil (Scrum).</li>
+                    <li><strong>Engenharia de Software:</strong> Desenvolvimento ponta a ponta das principais plataformas educacionais, utilizando Java (Spring Boot) para microsserviços robustos e Angular para interfaces dinâmicas.</li>
+                    <li><strong>Inovação & IA:</strong> Implementação de microsserviços com Go (Golang) e Python, integrando OCR, TTS e ICR para automatizar a geração de materiais de estudo e correções.</li>
+                    <li><strong>Ferramentas Customizadas:</strong> Criação de biblioteca de edição de texto proprietária (baseada em Tiptap/TypeScript) e microsserviços JS para layouts automáticos.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="cv-item">
+                <div class="cv-item-top">
+                  <span class="cv-role">Estagiário em Desenvolvimento de Software Full Stack</span>
+                  <span class="cv-date">mar/2023 – dez/2024</span>
+                </div>
+                <div class="cv-company">UniChristus | Fortaleza, Ceará</div>
+                <div class="cv-desc">
+                  <ul>
+                    <li>Colaborou ativamente no desenvolvimento da plataforma institucional, implementando novas features no front-end com Angular/TypeScript e SCSS.</li>
+                    <li>Atuou na manutenção e evolução do back-end em Java, garantindo a integridade dos dados e otimização de consultas no PostgreSQL.</li>
+                    <li>Participou de metodologias ágeis, contribuindo para a entrega contínua de funcionalidades focadas em automação acadêmica.</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section class="cv-section">
+              <div class="cv-section-title">
+                <i data-lucide="folder-git-2" class="section-icon"></i>
+                Projetos Relevantes
+              </div>
+
+              <div class="cv-item project-item">
+                <div class="cv-item-top1">
+                  <span class="cv-role">Detecção automatizada de patologias em pavimentos asfálticos utilizando redes neurais convolucionais</span>
+                  <a href="https://docs.google.com/document/d/135hKU4kXx79qQM8UIhOlumm-Gogv4NxMAWD9JkFKl04/edit?usp=sharing" target="_blank" class="project-link" title="Ver documentação" style="position: relative; top: -12px">
+                    <i data-lucide="external-link"></i>
+                  </a>
+                </div>
+                <div class="cv-desc">Sistema de Visão Computacional com arquitetura YOLOv11 e SAM2 para detecção de falhas em vias. Criação de dataset proprietário (757 imagens) alcançando 93,2% de precisão.</div>
+                <div class="project-preview">
+                  <img src="assets/images/tcc.png" alt="Detecção de patologias asfálticas" />
+                  <a href="https://docs.google.com/document/d/135hKU4kXx79qQM8UIhOlumm-Gogv4NxMAWD9JkFKl04/edit?usp=sharing" target="_blank" class="preview-title">Detecção automatizada de patologias em pavimentos asfálticos utilizando redes neurais convolucionais</a>
+                </div>
+              </div>
+
+              <div class="cv-item project-item">
+                <div class="cv-item-top">
+                  <span class="cv-role">Poke-draw - Classificação de Esboços com IA</span>
+                  <a href="https://github.com/skaduhs5232/poke_guess" target="_blank" class="project-link" title="Ver no GitHub">
+                    <i data-lucide="github"></i>
+                  </a>
+                </div>
+                <div class="cv-desc">Aplicação web interativa (Streamlit) capaz de identificar desenhos à mão em tempo real usando Deep Learning (MobileNetV2), treinado para reconhecer 251 categorias.</div>
+                <div class="project-preview">
+                  <img src="assets/images/poke-draw.png" alt="Poke-draw" />
+                  <a href="https://github.com/skaduhs5232/poke_guess" target="_blank" class="preview-title">Poke-draw</a>
+                </div>
+              </div>
+
+              <div class="cv-item project-item">
+                <div class="cv-item-top">
+                  <span class="cv-role">Editor de Texto (Tiptap-Exitus)</span>
+                  <a href="https://github.com/skaduhs5232/Tiptap-Exitus.git" target="_blank" class="project-link" title="Ver no GitHub">
+                    <i data-lucide="github"></i>
+                  </a>
+                </div>
+                <div class="cv-desc">Engenharia de biblioteca de componentes baseada em Tiptap e TypeScript, arquitetada para alta reusabilidade em múltiplos módulos institucionais.</div>
+                <div class="project-preview">
+                  <img src="assets/images/tiptap.png" alt="Tiptap-Exitus" />
+                  <a href="https://github.com/skaduhs5232/Tiptap-Exitus.git" target="_blank" class="preview-title">Tiptap-Exitus</a>
+                </div>
+              </div>
+
+              <div class="cv-item project-item">
+                <div class="cv-item-top">
+                  <span class="cv-role">Plataforma de Agendamento</span>
+                  <a href="https://github.com/skaduhs5232/Agendamento-sheets.git" target="_blank" class="project-link" title="Ver no GitHub">
+                    <i data-lucide="github"></i>
+                  </a>
+                </div>
+                <div class="cv-desc">Solução Full Stack (Angular, Express.js, MongoDB) com integração complexa ao Google Sheets via Apps Script para sincronização bidirecional e quadros dinâmicos.</div>
+                <div class="project-preview">
+                  <img src="assets/images/agendamento.png" alt="Plataforma de Agendamento" />
+                  <a href="https://github.com/skaduhs5232/Agendamento-sheets.git" target="_blank" class="preview-title">Plataforma de Agendamento</a>
+                </div>
+              </div>
+            </section>
+
+            <section class="cv-section">
+              <div class="cv-section-title">
+                <i data-lucide="code-2" class="section-icon"></i>
+                Habilidades Técnicas
+              </div>
+
+              <div class="skill-category">
+                <span class="skill-category-title">Linguagens & Backend:</span>
+                <div class="skill-badges">
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="badge-icon" />Java (Spring Boot)</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go" class="badge-icon" />Go (Golang)</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="badge-icon" />Python</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="badge-icon" />Node.js</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="badge-icon" />TypeScript</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="badge-icon" />C# (.NET)</span>
+                </div>
+              </div>
+
+              <div class="skill-category">
+                <span class="skill-category-title">Front-End:</span>
+                <div class="skill-badges">
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" class="badge-icon" />Angular</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="badge-icon" />React</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" alt="Svelte" class="badge-icon" />Svelte</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="badge-icon" />HTML5</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="SCSS" class="badge-icon" />SCSS</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="badge-icon" />JavaScript</span>
+                </div>
+              </div>
+
+              <div class="skill-category">
+                <span class="skill-category-title">IA & Dados:</span>
+                <div class="skill-badges">
+                  <span class="skill-badge"><i data-lucide="scan-eye" class="badge-icon-lucide"></i>Computer Vision (YOLO, SAM2, OpenCV)</span>
+                  <span class="skill-badge"><i data-lucide="scan-text" class="badge-icon-lucide"></i>OCR/ICR</span>
+                  <span class="skill-badge"><i data-lucide="audio-lines" class="badge-icon-lucide"></i>TTS</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="badge-icon" />TensorFlow</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="badge-icon" />PyTorch</span>
+                </div>
+              </div>
+
+              <div class="skill-category">
+                <span class="skill-category-title">Infraestrutura & Ferramentas:</span>
+                <div class="skill-badges">
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="badge-icon" />Docker</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" class="badge-icon" />Kubernetes</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP" class="badge-icon" />Google Cloud (GCP)</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="badge-icon" />PostgreSQL</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="badge-icon" />MongoDB</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="badge-icon" />Git/Gitflow</span>
+                  <span class="skill-badge"><i data-lucide="workflow" class="badge-icon-lucide"></i>CI/CD</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="cv-section">
+              <div class="cv-section-title">
+                <i data-lucide="graduation-cap" class="section-icon"></i>
+                Formação & Certificações
+              </div>
+              <div class="cv-item">
+                <div class="cv-item-top">
+                  <span class="cv-role">Bacharelado em Ciência da Computação</span>
+                  <span class="cv-date">Conclusão: 2025</span>
+                </div>
+                <div class="cv-company">Universidade de Fortaleza (UNIFOR)</div>
+              </div>
+
+              <div class="cv-desc" style="margin-top: 12px">
+                <span class="skill-label">Certificações:</span>
+                <ul style="margin-top: 4px">
+                  <li>Machine Learning e Data Science com Python de A a Z (Udemy)</li>
+                  <li>Desenvolvedor Go (Golang) – Do Zero ao Avançado 2025 (Udemy)</li>
+                  <li>Understanding TypeScript & JavaScript/TypeScript Avançado (Udemy)</li>
+                  <li>Java + Spring Boot (Udemy)</li>
+                </ul>
+              </div>
+
+              <div class="cv-desc" style="margin-top: 12px"><span class="skill-label">Idiomas:</span> Português (Nativo), Inglês (Avançado - Leitura, Escrita e Conversação)</div>
+            </section>
+          </div>
+
+          <!-- ENGLISH CONTENT -->
+          <div id="doc-en" class="hidden">
+            <header class="cv-header">
+              <div class="cv-name">Thiago de Oliveira Sampaio</div>
+              <div class="cv-contact">
+                <span class="contact-item">
+                  <i data-lucide="map-pin" class="contact-icon"></i>
+                  Fortaleza, Brazil
+                </span>
+                <span class="contact-item">
+                  <i data-lucide="phone" class="contact-icon"></i>
+                  +55 (85) 99123-8295
+                </span>
+                <a href="mailto:thiagooliveira1039@gmail.com" class="contact-item">
+                  <i data-lucide="mail" class="contact-icon"></i>
+                  thiagooliveira1039@gmail.com
+                </a>
+              </div>
+              <div class="cv-contact" style="margin-top: 8px">
+                <a href="https://linkedin.com/in/thiago-de-oliveira-sampaio" target="_blank" class="contact-item contact-link">
+                  <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                    />
+                  </svg>
+                  linkedin.com/in/thiago-de-oliveira-sampaio
+                </a>
+                <a href="https://github.com/Skaduhs5232" target="_blank" class="contact-item contact-link">
+                  <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                    <path
+                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                    />
+                  </svg>
+                  github.com/Skaduhs5232
+                </a>
+              </div>
+            </header>
+
+            <section class="cv-section">
+              <div class="cv-section-title">
+                <i data-lucide="user" class="section-icon"></i>
+                Professional Summary
+              </div>
+              <p>
+                Full Stack Developer graduated in Computer Science, with practical experience in project coordination and technical leadership. Solid experience with Java (Spring Boot), Go (Golang), and Angular/TypeScript, focused on creating scalable web platforms. Expertise in integrating Artificial Intelligence solutions (OCR, TTS, Computer Vision) for process automation. Professional with
+                advanced English, oriented to agile methodologies and technological innovation.
+              </p>
+            </section>
+
+            <section class="cv-section">
+              <div class="cv-section-title">
+                <i data-lucide="briefcase" class="section-icon"></i>
+                Professional Experience
+              </div>
+
+              <div class="cv-item">
+                <div class="cv-item-top">
+                  <span class="cv-role">Junior Full Stack Software Developer</span>
+                  <span class="cv-date">Jan/2025 – Present</span>
+                </div>
+                <div class="cv-company">UniChristus | Fortaleza, Brazil</div>
+                <div class="cv-desc">
+                  <ul>
+                    <li><strong>Technical Leadership:</strong> Acted in the coordination of strategic projects, defining software architecture and supporting the team in the agile development cycle (Scrum).</li>
+                    <li><strong>Software Engineering:</strong> End-to-end development of the institution's main educational platforms, using Java (Spring Boot) for robust microservices and Angular for dynamic interfaces.</li>
+                    <li><strong>Innovation & AI:</strong> Implemented microservices with Go (Golang) and Python, integrating OCR, TTS, and ICR services to automate the generation of study materials and corrections.</li>
+                    <li><strong>Custom Tools:</strong> Created a proprietary text editing library (based on Tiptap/TypeScript) and JavaScript microservices for automatic test layout generation.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="cv-item">
+                <div class="cv-item-top">
+                  <span class="cv-role">Full Stack Software Development Intern</span>
+                  <span class="cv-date">Mar/2023 – Dec/2024</span>
+                </div>
+                <div class="cv-company">UniChristus | Fortaleza, Brazil</div>
+                <div class="cv-desc">
+                  <ul>
+                    <li>Actively collaborated in the development of the institutional platform, implementing new features on the front-end with Angular/TypeScript and SCSS.</li>
+                    <li>Worked on the maintenance and evolution of the back-end in Java, ensuring data integrity and query optimization in PostgreSQL.</li>
+                    <li>Participated in agile methodologies, contributing to the continuous delivery of functionalities focused on academic automation.</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section class="cv-section">
+              <div class="cv-section-title">
+                <i data-lucide="folder-git-2" class="section-icon"></i>
+                Relevant Projects
+              </div>
+
+              <div class="cv-item project-item">
+                <div class="cv-item-top">
+                  <span class="cv-role">Automated detection of pathologies in asphalt pavements using convolutional neural networks</span>
+                  <a href="https://docs.google.com/document/d/135hKU4kXx79qQM8UIhOlumm-Gogv4NxMAWD9JkFKl04/edit?usp=sharing" target="_blank" class="project-link" title="View documentation">
+                    <i data-lucide="external-link"></i>
+                  </a>
+                </div>
+                <div class="cv-desc">Computer Vision system with YOLOv11 and SAM2 architecture for road defect detection. Created a proprietary dataset (757 images) achieving 93.2% precision.</div>
+                <div class="project-preview">
+                  <img src="assets/images/tcc.png" alt="Asphalt Pathology Detection" />
+                  <a href="https://docs.google.com/document/d/135hKU4kXx79qQM8UIhOlumm-Gogv4NxMAWD9JkFKl04/edit?usp=sharing" target="_blank" class="preview-title">Automated detection of pathologies in asphalt pavements using convolutional neural networks</a>
+                </div>
+              </div>
+
+              <div class="cv-item project-item">
+                <div class="cv-item-top">
+                  <span class="cv-role">Poke-draw - AI Sketch Classification</span>
+                  <a href="https://github.com/skaduhs5232/poke_guess" target="_blank" class="project-link" title="View on GitHub">
+                    <i data-lucide="github"></i>
+                  </a>
+                </div>
+                <div class="cv-desc">Interactive web application (Streamlit) capable of identifying hand-drawn sketches in real-time using Deep Learning (MobileNetV2), trained on 251 categories.</div>
+                <div class="project-preview">
+                  <img src="assets/images/poke-draw.png" alt="Poke-draw" />
+                  <a href="https://github.com/skaduhs5232/poke_guess" target="_blank" class="preview-title">Poke-draw</a>
+                </div>
+              </div>
+
+              <div class="cv-item project-item">
+                <div class="cv-item-top">
+                  <span class="cv-role">Text Editor (Tiptap-Exitus)</span>
+                  <a href="https://github.com/skaduhs5232/Tiptap-Exitus.git" target="_blank" class="project-link" title="View on GitHub">
+                    <i data-lucide="github"></i>
+                  </a>
+                </div>
+                <div class="cv-desc">Engineering of a customizable component library based on Tiptap and TypeScript, architected for high reusability across multiple institutional web modules.</div>
+                <div class="project-preview">
+                  <img src="assets/images/tiptap.png" alt="Tiptap-Exitus" />
+                  <a href="https://github.com/skaduhs5232/Tiptap-Exitus.git" target="_blank" class="preview-title">Tiptap-Exitus</a>
+                </div>
+              </div>
+
+              <div class="cv-item project-item">
+                <div class="cv-item-top">
+                  <span class="cv-role">Scheduling Platform</span>
+                  <a href="https://github.com/skaduhs5232/Agendamento-sheets.git" target="_blank" class="project-link" title="View on GitHub">
+                    <i data-lucide="github"></i>
+                  </a>
+                </div>
+                <div class="cv-desc">Full Stack solution (Angular, Express.js, MongoDB) with complex Google Sheets integration via Apps Script for bidirectional synchronization and dynamic timetables.</div>
+                <div class="project-preview">
+                  <img src="assets/images/agendamento.png" alt="Scheduling Platform" />
+                  <a href="https://github.com/skaduhs5232/Agendamento-sheets.git" target="_blank" class="preview-title">Scheduling Platform</a>
+                </div>
+              </div>
+            </section>
+
+            <section class="cv-section">
+              <div class="cv-section-title">
+                <i data-lucide="code-2" class="section-icon"></i>
+                Technical Skills
+              </div>
+
+              <div class="skill-category">
+                <span class="skill-category-title">Languages & Backend:</span>
+                <div class="skill-badges">
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="badge-icon" />Java (Spring Boot)</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" alt="Go" class="badge-icon" />Go (Golang)</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="badge-icon" />Python</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="badge-icon" />Node.js</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="badge-icon" />TypeScript</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="badge-icon" />C# (.NET)</span>
+                </div>
+              </div>
+
+              <div class="skill-category">
+                <span class="skill-category-title">Front-End:</span>
+                <div class="skill-badges">
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" class="badge-icon" />Angular</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="badge-icon" />React</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/svelte/svelte-original.svg" alt="Svelte" class="badge-icon" />Svelte</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="badge-icon" />HTML5</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" alt="SCSS" class="badge-icon" />SCSS</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Tiptap" class="badge-icon" />Tiptap.js</span>
+                </div>
+              </div>
+
+              <div class="skill-category">
+                <span class="skill-category-title">AI & Data:</span>
+                <div class="skill-badges">
+                  <span class="skill-badge"><i data-lucide="scan-eye" class="badge-icon-lucide"></i>Computer Vision (YOLO, SAM2, OpenCV)</span>
+                  <span class="skill-badge"><i data-lucide="scan-text" class="badge-icon-lucide"></i>OCR/ICR</span>
+                  <span class="skill-badge"><i data-lucide="audio-lines" class="badge-icon-lucide"></i>TTS</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="badge-icon" />TensorFlow</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="badge-icon" />PyTorch</span>
+                </div>
+              </div>
+
+              <div class="skill-category">
+                <span class="skill-category-title">Infrastructure & Tools:</span>
+                <div class="skill-badges">
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="badge-icon" />Docker</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" class="badge-icon" />Kubernetes</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="GCP" class="badge-icon" />Google Cloud (GCP)</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="badge-icon" />PostgreSQL</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="badge-icon" />MongoDB</span>
+                  <span class="skill-badge"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="badge-icon" />Git/Gitflow</span>
+                  <span class="skill-badge"><i data-lucide="workflow" class="badge-icon-lucide"></i>CI/CD</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="cv-section">
+              <div class="cv-section-title">
+                <i data-lucide="graduation-cap" class="section-icon"></i>
+                Education & Certifications
+              </div>
+              <div class="cv-item">
+                <div class="cv-item-top">
+                  <span class="cv-role">Bachelor's Degree in Computer Science</span>
+                  <span class="cv-date">Completion: 2025</span>
+                </div>
+                <div class="cv-company">Universidade de Fortaleza (UNIFOR)</div>
+              </div>
+
+              <div class="cv-desc" style="margin-top: 12px">
+                <span class="skill-label">Certifications:</span>
+                <ul style="margin-top: 4px">
+                  <li>Machine Learning and Data Science with Python from A to Z (Udemy)</li>
+                  <li>Go (Golang) Developer – From Zero to Advanced 2025 (Udemy)</li>
+                  <li>Understanding TypeScript & Advanced JS/TS (Udemy)</li>
+                  <li>Java + Spring Boot (Udemy)</li>
+                </ul>
+              </div>
+
+              <div class="cv-desc" style="margin-top: 12px"><span class="skill-label">Languages:</span> Portuguese (Native), English (Advanced - Reading, Writing, and Conversation)</div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
