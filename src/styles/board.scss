@@ -1,0 +1,344 @@
+.view-quadro .view-scroll {
+  padding-left: clamp(8px, 3vw, 40px);
+  padding-right: clamp(8px, 3vw, 40px);
+}
+
+.board {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 48px) clamp(14px, 3vw, 44px) clamp(36px, 5vw, 60px);
+  border: clamp(10px, 1.6vw, 20px) solid;
+  border-color: #a06c3e #7a4d2a #6e4526 #8a5a33;
+  border-radius: 6px;
+  background:
+    radial-gradient(rgba(90, 55, 20, 0.3) 18%, transparent 21%) 0 0 / 7px 7px,
+    radial-gradient(rgba(255, 235, 200, 0.2) 15%, transparent 18%) 3px 2px / 9px 9px,
+    linear-gradient(135deg, #cfa36d, #bd8c55);
+  box-shadow: inset 0 0 40px rgba(70, 40, 10, 0.45), 0 30px 60px -20px rgba(20, 10, 0, 0.7);
+}
+
+.board-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+  margin-bottom: 30px;
+}
+
+.board-title {
+  font: 400 clamp(1.8rem, 4vw, 2.8rem) / 1 var(--serif);
+  padding: 10px 22px 12px;
+  background: var(--papel);
+  box-shadow: 0 3px 8px rgba(40, 20, 5, 0.3);
+  transform: rotate(-1.2deg);
+  outline: none;
+}
+
+.board-sub {
+  font-size: 1.35rem;
+  color: #3b2410;
+}
+
+.board-pins {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.pin-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 12px;
+  font: 500 0.8rem var(--mono);
+  border: 0;
+  background: rgba(251, 247, 238, 0.85);
+  box-shadow: 0 1px 3px rgba(40, 20, 5, 0.3);
+  transition: transform 0.15s, background 0.15s;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &.on {
+    background: var(--nanquim);
+    color: var(--papel);
+  }
+
+  .dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.pinned {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr));
+  align-items: start;
+  gap: 32px 26px;
+
+  li {
+    transform: rotate(var(--tilt)) translateY(var(--drop, 0));
+
+    &:nth-child(3n + 2) {
+      --drop: 10px;
+    }
+    &:nth-child(4n + 3) {
+      --drop: -4px;
+    }
+    transition: transform 0.25s var(--ease);
+
+    &:hover,
+    &:focus-within {
+      transform: rotate(0deg) translateY(-4px);
+      position: relative;
+      z-index: 2;
+    }
+  }
+}
+
+.pcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding: 18px 16px 16px;
+  text-align: left;
+  border: 0;
+  background: var(--papel);
+  box-shadow: 0 2px 3px rgba(40, 20, 5, 0.25), 0 10px 18px -8px rgba(40, 20, 5, 0.45);
+  transition: box-shadow 0.25s;
+
+  &:hover {
+    box-shadow: 0 3px 5px rgba(40, 20, 5, 0.25), 0 22px 30px -10px rgba(40, 20, 5, 0.55);
+  }
+
+  .pin {
+    position: absolute;
+    left: 50%;
+    top: -7px;
+    width: 16px;
+    height: 16px;
+    transform: translateX(-50%);
+  }
+
+  &.index {
+    background:
+      linear-gradient(transparent 0 38px, rgba(217, 84, 43, 0.4) 38px 39.5px, transparent 39.5px),
+      repeating-linear-gradient(transparent 0 23px, rgba(63, 111, 181, 0.14) 23px 24px),
+      var(--papel);
+    background-position: 0 0, 0 16px, 0 0;
+  }
+
+  &.polaroid {
+    padding: 12px 12px 18px;
+  }
+}
+
+.pcard-photo {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #2a2a2a;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    filter: saturate(0.85) contrast(1.05) sepia(0.12);
+  }
+}
+
+.pcard-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--grafite-2);
+}
+
+.pcard-title {
+  font: 400 1.45rem/1.08 var(--serif);
+  color: var(--nanquim);
+}
+
+.pcard-summary {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #45505d;
+}
+
+.pcard-metric {
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--caju);
+
+  small {
+    font-size: 1.05rem;
+    color: var(--grafite);
+  }
+}
+
+.pcard-stack {
+  padding-top: 8px;
+  border-top: 1px dashed rgba(31, 42, 55, 0.2);
+  font-size: 0.68rem;
+  color: var(--grafite-2);
+}
+
+/* ficha técnica */
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: start center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: clamp(60px, 8vh, 90px) 14px 40px;
+  background: rgba(30, 18, 8, 0.55);
+  animation: fade 0.25s both;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.sheet {
+  position: relative;
+  width: min(720px, 100%);
+  padding: clamp(28px, 5vw, 48px);
+  transform: rotate(0.4deg);
+  animation: sheet-in 0.35s var(--ease) both;
+
+  .pin {
+    position: absolute;
+    top: -8px;
+    width: 18px;
+    height: 18px;
+  }
+  .pin-a {
+    left: 18px;
+  }
+  .pin-b {
+    right: 18px;
+  }
+}
+
+@keyframes sheet-in {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) rotate(-2deg);
+  }
+}
+
+.sheet-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(31, 42, 55, 0.3);
+  background: transparent;
+
+  &:hover {
+    border-color: var(--caju);
+    color: var(--caju);
+  }
+}
+
+.sheet .serif-title {
+  margin-top: 10px;
+  padding-right: 120px;
+}
+
+.sheet-summary {
+  margin-top: 14px;
+  font-size: 1.05rem;
+  color: #34404e;
+}
+
+.sheet-img {
+  width: 100%;
+  margin-top: 20px;
+  border: 8px solid #fff;
+  box-shadow: 0 2px 8px rgba(40, 20, 5, 0.3);
+}
+
+.sheet-spec {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  margin: 22px 0 0;
+  border: 1px solid rgba(31, 42, 55, 0.2);
+
+  div {
+    padding: 10px 12px;
+    border: 1px solid rgba(31, 42, 55, 0.1);
+  }
+
+  dt {
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--grafite-2);
+  }
+
+  dd {
+    margin: 4px 0 0;
+    font-size: 0.82rem;
+  }
+
+  b {
+    color: var(--caju);
+  }
+}
+
+.sheet-h {
+  margin: 26px 0 10px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.sheet-points {
+  margin: 0;
+  padding-left: 1.3em;
+  display: grid;
+  gap: 8px;
+
+  li::marker {
+    font: 500 0.8rem var(--mono);
+    color: var(--caju);
+  }
+}
+
+.sheet-links {
+  margin-top: 28px;
+}
+
+.muted {
+  color: var(--grafite-2);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .sheet .serif-title {
+    padding-right: 0;
+    margin-top: 36px;
+  }
+
+  .board-pins {
+    margin-left: 0;
+  }
+}

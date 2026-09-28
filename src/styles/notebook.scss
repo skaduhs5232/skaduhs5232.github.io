@@ -1,0 +1,250 @@
+.notebook {
+  position: relative;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-top: 38px;
+}
+
+.nb-tabs {
+  position: absolute;
+  top: 0;
+  right: 40px;
+  display: flex;
+  gap: 4px;
+}
+
+.nb-tab {
+  padding: 8px 16px 18px;
+  font-size: 1.3rem;
+  line-height: 1;
+  border: 0;
+  border-radius: 8px 8px 0 0;
+  color: var(--nanquim);
+  transform: translateY(6px);
+  transition: transform 0.2s;
+  box-shadow: 0 -2px 4px rgba(40, 20, 5, 0.15);
+
+  &.t-trajetoria {
+    background: var(--manga);
+  }
+  &.t-ferramentas {
+    background: var(--menta);
+  }
+  &.t-metodo {
+    background: #f7b9a5;
+  }
+
+  &:hover {
+    transform: translateY(2px);
+  }
+
+  &[aria-current="page"] {
+    transform: translateY(-2px);
+    font-weight: 700;
+  }
+}
+
+.spread {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 10px;
+  border-radius: 10px;
+  background: #2f4a3f;
+  box-shadow: 0 30px 60px -20px rgba(20, 10, 0, 0.7);
+  animation: page-in 0.35s var(--ease) both;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0.4;
+  }
+}
+
+.rings {
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  bottom: 30px;
+  z-index: 2;
+  width: 24px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 50%, transparent 5px, #9aa2ab 5.5px 8px, transparent 8.5px) 0 0 / 24px 34px repeat-y;
+}
+
+.page {
+  min-height: 560px;
+  padding: clamp(24px, 4vw, 44px) clamp(20px, 4vw, 44px) 36px;
+  color: var(--nanquim);
+  background:
+    repeating-linear-gradient(transparent 0 27px, rgba(63, 111, 181, 0.16) 27px 28px) 0 18px,
+    var(--papel);
+
+  &:first-of-type {
+    border-radius: 6px 0 0 6px;
+    box-shadow: inset -18px 0 24px -18px rgba(40, 20, 5, 0.35);
+  }
+
+  &:last-of-type {
+    border-radius: 0 6px 6px 0;
+    box-shadow: inset 18px 0 24px -18px rgba(40, 20, 5, 0.35);
+  }
+}
+
+.nb-title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--caju);
+  outline: none;
+}
+
+.nb-title-spacer {
+  display: block;
+  height: clamp(2.2rem, 4vw, 3rem);
+}
+
+.nb-sub {
+  margin: 22px 0 6px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.timeline {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0 0 0 20px;
+  border-left: 2px solid rgba(217, 84, 43, 0.45);
+
+  > li {
+    position: relative;
+    margin-bottom: 22px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -27px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--papel);
+      border: 2px solid var(--caju);
+    }
+  }
+
+  h3 {
+    margin: 2px 0 6px;
+    font: 400 1.35rem/1.15 var(--serif);
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.1em;
+    font-size: 0.93rem;
+    color: #3e4957;
+  }
+}
+
+.tl-period {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--grafite-2);
+}
+
+.tl-org {
+  color: var(--grafite);
+  font-size: 0.95rem;
+}
+
+.margin-note {
+  margin-top: 28px;
+  padding-left: 12px;
+  border-left: 3px solid var(--manga);
+  font-size: 1.35rem;
+  line-height: 1.15;
+  color: var(--azul);
+  transform: rotate(-1deg);
+}
+
+.tool-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+
+  li {
+    padding: 2px 9px;
+    font: 0.8rem var(--mono);
+    border: 1px solid rgba(31, 42, 55, 0.35);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.principles {
+  margin: 20px 0 0;
+  padding-left: 1.4em;
+
+  li {
+    margin-bottom: 22px;
+
+    &::marker {
+      font: 700 1.5rem var(--hand);
+      color: var(--caju);
+    }
+  }
+
+  h3 {
+    font: 400 1.35rem/1.15 var(--serif);
+  }
+
+  p {
+    margin-top: 4px;
+    font-size: 0.95rem;
+    color: #3e4957;
+  }
+}
+
+@media (max-width: 760px) {
+  .nb-tabs {
+    right: 12px;
+    left: 12px;
+    overflow-x: auto;
+  }
+
+  .nb-tab {
+    font-size: 1.1rem;
+    padding: 8px 12px 18px;
+  }
+
+  .spread {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rings {
+    display: none;
+  }
+
+  .page {
+    min-height: 0;
+
+    &:first-of-type {
+      border-radius: 6px 6px 0 0;
+      box-shadow: none;
+    }
+
+    &:last-of-type {
+      border-radius: 0 0 6px 6px;
+      box-shadow: inset 0 14px 18px -14px rgba(40, 20, 5, 0.3);
+    }
+  }
+
+  .nb-title-spacer {
+    display: none;
+  }
+}
