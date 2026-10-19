@@ -88,26 +88,27 @@ export const ptUi = {
 
 export const pt: Copy = {
   meta: {
-    title: "Thiago Sampaio · Engenheiro de Software Sênior",
-    description: "Thiago de Oliveira Sampaio, Engenheiro de Software Sênior em Fortaleza. Full stack, IA aplicada e modernização de sistemas legados.",
+    title: "Thiago Sampaio · Engenheiro de Software Backend",
+    description:
+      "Thiago de Oliveira Sampaio, engenheiro de software backend em Fortaleza. Java, Spring Boot, Go, microsserviços, modernização de legado, liderança técnica e IA aplicada (agentes LLM). 5+ anos.",
   },
-  role: "Engenheiro de Software Sênior",
+  role: "Engenheiro de Software Backend",
   bio: [
-    "Construo software que precisa durar: plataformas educacionais que atendem várias instituições, ERPs legados que viram arquitetura moderna sem parar a operação e, nas horas vagas, modelos de IA que reconhecem Pokémon desenhados à mão.",
-    "Hoje lidero a modernização de um ERP legado na S4E. Antes, passei mais de três anos na UniChristus, de estagiário a desenvolvedor full stack, projetando microsserviços em Java e Go e colocando OCR, ICR e TTS para corrigir provas. Sou bacharel em Ciência da Computação e mestrando em Informática Aplicada na UNIFOR.",
+    "Engenheiro de software com 5+ anos de experiência (desde 2021; em times de produto desde 2023), com foco em backend: Java (Spring Boot), Go, microsserviços e APIs REST/gRPC. Atuo em modernização de sistemas legados, liderança técnica e IA aplicada, com agentes de LLM em produção.",
+    "Desde junho de 2026, sou Engenheiro de Software Sênior na S4E e lidero tecnicamente um time de 5 pessoas na modernização de um ERP legado: AS-IS/TO-BE, arquitetura-alvo, ADRs e contratos de API. Antes, no Colégio Christus, fui de estagiário a Desenvolvedor Full Stack II e projetei microsserviços do Exitus, ecossistema educacional multi-tenant com 12 módulos que atende cerca de 11 mil alunos no Christus e em outras 3 escolas. Bacharel em Ciência da Computação e mestrando em Informática Aplicada na UNIFOR (2026–2027), com pesquisa em alometria de bacias hidrográficas.",
   ],
   now: [
     {
       title: "Modernizando um ERP legado",
-      text: "Na S4E desde agosto de 2026: mapeio o AS-IS, desenho o TO-BE e transformo conhecimento tácito em ADRs, contratos de API e guias.",
+      text: "Na S4E desde junho de 2026, lidero tecnicamente um time de 5 pessoas: mapeio o AS-IS com as áreas de negócio, desenho o TO-BE e registro a arquitetura-alvo em ADRs e contratos de API.",
     },
     {
-      title: "Cidades, bacias e lixo urbano",
-      text: "Clusterizo cidades com o City Clustering Algorithm e cruzo com o potencial de deságue das bacias para prever o plástico que chega aos rios.",
+      title: "Alometria de bacias e Lei de Zipf",
+      text: "Pesquisa principal do mestrado (UNIFOR, 2026–2027): alometria de bacias hidrográficas. Artigo paralelo: a Lei de Zipf nas manchas urbanas do Brasil, delimitadas com o City Clustering Algorithm — expoente de cerca de 1,00 (4.702 manchas) e 0,92 no Nordeste (1.729).",
     },
     {
-      title: "LLMs sem amarra de provedor",
-      text: "O Professor Carvalho troca de Ollama local para qualquer API OpenAI-compatible mudando 3 variáveis de ambiente.",
+      title: "Chatbots educacionais no Exitus",
+      text: "Em produção: um gatekeeper BERTimbau encaminha cada mensagem a agentes especialistas com ferramentas e MCP, com auditoria das conversas e controle de custo de LLM.",
     },
   ],
   status: { production: "em produção", oss: "open source", research: "pesquisa", lab: "experimento" },
@@ -118,22 +119,22 @@ export const pt: Copy = {
       role: "Full Stack · arquitetura",
       metric: { value: "12", label: "módulos integrados" },
       summary:
-        "Plataforma educacional multi-tenant que atende várias instituições numa única base: avaliações, editor de conteúdo, correção automática, comunicação e mais.",
+        "Ecossistema educacional multi-tenant com 12 módulos integrados (avaliações, editor de conteúdo, correção automática, comunicação e outros), usado por cerca de 11 mil alunos no Colégio Christus e em outras 3 escolas.",
       points: [
-        "Microsserviços em Java (Spring Boot) e Go com deploys independentes por domínio.",
-        "Pipelines de OCR, ICR e TTS que geram, leem e corrigem provas sem etapas manuais.",
-        "Modernização de módulos legados integrando sistemas internos e externos por API.",
+        "Microsserviços em Java (Spring Boot) e Go, com deploys independentes por domínio.",
+        "Plataforma de chatbots educacionais em produção: um gatekeeper BERTimbau encaminha cada mensagem a agentes especialistas com ferramentas e MCP, com auditoria das conversas e controle de custo de LLM.",
+        "OCR, ICR e Text-to-Speech no fluxo de geração, leitura e correção de avaliações.",
+        "Modernização de módulos legados e integração de sistemas internos e externos via APIs REST.",
       ],
     },
     tiptap: {
-      title: "Exitus Editor",
-      role: "Autor · biblioteca",
+      title: "Tiptap-Exitus",
+      role: "Coautor · com Marcelino Braga",
       summary:
-        "Editor rich-text sobre Tiptap/ProseMirror com fórmulas, imagens e manipulação de conteúdo, usado como editor único em vários módulos.",
+        "Biblioteca open source de editor rich-text sobre Tiptap/ProseMirror, desenvolvida em conjunto com Marcelino Braga e adotada como editor único em vários módulos do Exitus.",
       points: [
-        "Inicialização mínima: um elemento HTML e um arquivo JS.",
-        "Corretor ortográfico integrado, servido por um microsserviço em Go.",
-        "Extensões customizadas para conteúdo de avaliações.",
+        "Em produção como editor único em vários módulos do Exitus.",
+        "Corretor ortográfico que desenvolvi sozinho: microsserviço em Go com HunspellGo e deploy independente.",
       ],
     },
     profoak: {
@@ -151,12 +152,13 @@ export const pt: Copy = {
     pavimento: {
       title: "Patologias em pavimento asfáltico",
       role: "Pesquisador · TCC",
-      metric: { value: "93,2%", label: "de precisão" },
-      summary: "Visão computacional que detecta e segmenta falhas em vias urbanas a partir de fotos, com dataset próprio anotado à mão.",
+      metric: { value: "0,696", label: "mAP@50 no teste" },
+      summary:
+        "TCC em Ciência da Computação (UNIFOR), orientado pelo Prof. Me. Túlio Rodrigues Ribeiro: YOLOv11 detecta buracos e remendos em fotos de vias urbanas brasileiras.",
       points: [
-        "YOLOv11X com transfer learning a partir de pesos COCO.",
-        "Segmentação com SAM2 e fine-tuning controlado contra overfitting.",
-        "Dataset próprio com 757 imagens anotadas.",
+        "YOLOv11X com transfer learning a partir de pesos COCO e aumento de dados, sobre dataset próprio de 757 imagens anotadas com apoio do SAM2.",
+        "No conjunto de teste: mAP@50 de 0,696 (0,628 no modelo base), mAP@50-95 de 0,503 e precisão de 0,853. Na classe buraco, a precisão foi de 0,932.",
+        "Aceito para apresentação oral no XXVI Encontro de Pós-Graduação e Pesquisa da UNIFOR (out/2026).",
       ],
     },
     pokeguess: {
@@ -173,29 +175,31 @@ export const pt: Copy = {
       points: ["Ingestão de documentos com reindexação limpa e diretórios configuráveis.", "Migrações versionadas com Alembic sobre PostgreSQL + pgvector."],
     },
     cca: {
-      title: "City Clustering Algorithm",
+      title: "Alometria de bacias e Lei de Zipf",
       role: "Pesquisador · mestrado",
-      metric: { value: "10⁶+", label: "sítios processáveis" },
-      summary: "CCA para regionalização: agrupa setores ou pixels populacionais em clusters urbanos por densidade e distância haversine.",
+      metric: { value: "4.702", label: "manchas urbanas no Brasil" },
+      summary:
+        "Pesquisa principal do Mestrado em Informática Aplicada (UNIFOR, 2026–2027): alometria de bacias hidrográficas, as relações de escala que ligam propriedades das bacias a dados espaciais. Artigo paralelo sobre a Lei de Zipf nas manchas urbanas do Brasil.",
       points: [
-        "KD-tree sobre a esfera: mesmo resultado do laço par-a-par, rodando em milhões de sítios.",
-        "Funciona com pontos (setores censitários) e rasters (GPW).",
+        "Manchas urbanas delimitadas com o City Clustering Algorithm (CCA) sobre dados populacionais em grade.",
+        "Resultados até aqui: 4.702 manchas no Brasil, expoente de cerca de 1,00; no Nordeste, 1.729 manchas, expoente de 0,92.",
       ],
     },
     intent: {
-      title: "Intenção de mensagens de estudantes",
-      role: "Pesquisador",
-      summary: "Pipeline de PLN que classifica mensagens de alunos por intenção e decide qual fluxo de IA responde.",
+      title: "Chatbots educacionais com agentes (Exitus)",
+      role: "Autor",
+      summary:
+        "Plataforma de chatbots educacionais em produção no Exitus. Um classificador BERTimbau funciona como gatekeeper e encaminha cada mensagem ao agente especialista certo.",
       points: [
-        "Fine-tuning de BERTimbau com HuggingFace.",
-        "Orquestração com Gemini conforme a categoria detectada.",
-        "Publicado no XXVI Encontro de Pós-Graduação e Pesquisa da UNIFOR.",
+        "BERTimbau ajustado com Hugging Face identifica a intenção e roteia para agentes especialistas com ferramentas e servidores MCP.",
+        "Auditoria das conversas e monitoramento de custos de LLM.",
+        "A caracterização das interações estudante–agente foi aceita para apresentação oral no XXVI Encontro de Pós-Graduação e Pesquisa da UNIFOR (out/2026).",
       ],
     },
     medsystem: {
       title: "Med System",
       role: "Full Stack",
-      summary: "Apoio a médicos externos e estudantes da UniChristus: atendimento clínico, apoio ao diagnóstico, receitas e rotinas médicas.",
+      summary: "Apoio a médicos externos e estudantes da Universidade Christus: atendimento clínico, apoio ao diagnóstico e emissão de receitas.",
       points: ["Mensageria com RabbitMQ entre serviços Node.js.", "Interface React + Tailwind para uso durante o atendimento."],
     },
     optasks: {
@@ -218,10 +222,10 @@ export const pt: Copy = {
       points: ["Detecta $$…$$, \\[…\\] e \\(…\\) automaticamente.", "Escapa HTML que não é LaTeX para evitar XSS."],
     },
     spell: {
-      title: "Spell checker em Go",
+      title: "Corretor ortográfico em Go",
       role: "Autor",
-      summary: "Microsserviço containerizado em Go que fornece correção ortográfica ao Exitus Editor.",
-      points: ["Serviço isolado, com deploy independente do editor."],
+      summary: "Microsserviço em Go com HunspellGo que faz a correção ortográfica do Tiptap-Exitus. Desenvolvi sozinho, com deploy independente do editor.",
+      points: ["Serviço isolado, em produção como parte do editor usado em vários módulos do Exitus."],
     },
     pokeia: {
       title: "PokeIA",
@@ -268,43 +272,70 @@ export const pt: Copy = {
   },
   jobs: [
     {
-      period: "ago/2026 — atual",
+      period: "jun/2026 — atual",
       role: "Engenheiro de Software Sênior",
       org: "S4E",
       points: [
-        "Lidero o time que moderniza um ERP legado, do levantamento AS-IS/TO-BE à entrega em produção.",
-        "Produzo ADRs, diagramas e contratos de API que reduzem a dependência de conhecimento tácito.",
-        "Defino padrões por code review, mentoria e alinhamento entre squads.",
+        "Lidero tecnicamente um time de 5 pessoas na modernização de um ERP legado, com entregas incrementais que convivem com o sistema atual.",
+        "Mapeio com as áreas de negócio os fluxos AS-IS e desenho os cenários TO-BE que orientam a migração.",
+        "Defino a arquitetura-alvo e os contratos de API entre os módulos modernizados.",
+        "Registro as decisões técnicas em ADRs, diagramas de arquitetura e guias de padrões.",
+        "Conduzo code review e mentoria técnica e alinho padrões de desenvolvimento entre squads.",
       ],
     },
     {
-      period: "jan/2025 — ago/2026",
-      role: "Desenvolvedor Full Stack",
-      org: "UniChristus",
+      period: "set/2024 — jun/2026",
+      role: "Desenvolvedor de Software Full Stack II",
+      org: "Colégio Christus",
       points: [
-        "Projetei microsserviços em Java (Spring Boot) e Go com deploys independentes.",
-        "Integrei OCR, ICR e Text-to-Speech para gerar, ler e corrigir avaliações.",
-        "Liderei arquitetura e code review com Docker, CI/CD e GCP.",
+        "Projetei microsserviços em Java (Spring Boot) e Go para o Exitus, com 12 módulos e cerca de 11 mil alunos no Christus e em outras 3 escolas.",
+        "Construí a plataforma de chatbots educacionais em produção: gatekeeper BERTimbau, agentes especialistas com ferramentas e MCP, auditoria e controle de custo de LLM.",
+        "Integrei OCR, ICR e Text-to-Speech ao fluxo de geração, leitura e correção de avaliações.",
+        "Desenvolvi o Tiptap-Exitus com Marcelino Braga; o corretor ortográfico em Go com HunspellGo é só meu.",
+        "Liderei arquitetura, code review e boas práticas com Docker, Kubernetes, CI/CD e GCP.",
       ],
     },
     {
-      period: "mar/2023 — dez/2024",
-      role: "Estagiário Full Stack",
-      org: "UniChristus",
-      points: ["Entreguei features em Angular, React e Vue em ciclos quinzenais.", "Otimizei APIs Spring Boot e consultas PostgreSQL de alto volume."],
+      period: "out/2023 — set/2024",
+      role: "Desenvolvedor de Software Full Stack I",
+      org: "Colégio Christus",
+      points: [
+        "Desenvolvi funcionalidades de ponta a ponta: regras de negócio e acesso a dados em Java e SQL; telas em Angular e TypeScript.",
+        "Mantive e evoluí funcionalidades em produção, em ciclos ágeis com o time.",
+      ],
+    },
+    {
+      period: "mar/2023 — set/2023",
+      role: "Estagiário de Desenvolvimento de Software",
+      org: "Colégio Christus",
+      points: [
+        "Otimizei APIs REST (Spring Boot) e consultas PostgreSQL em endpoints de alto volume.",
+        "Entreguei funcionalidades com Angular, React e Vue em ciclos quinzenais, validadas pelos stakeholders.",
+        "Efetivado como Desenvolvedor Full Stack I ao fim do estágio.",
+      ],
+    },
+    {
+      period: "mar/2021 — mar/2023",
+      role: "Desenvolvedor Web (Freelance)",
+      org: "Sandie",
+      points: [
+        "Criei e mantive o site da Sandie de ponta a ponta: design, front-end e back-end, hospedagem, SEO técnico, desempenho, responsividade e suporte.",
+      ],
     },
   ],
   education: [
-    { period: "2026 — 2027", title: "Mestrado em Informática Aplicada", org: "UNIFOR · em andamento" },
-    { period: "2022 — 2025", title: "Bacharelado em Ciência da Computação", org: "UNIFOR" },
+    { period: "2026 — 2027", title: "Mestrado em Informática Aplicada", org: "UNIFOR · em andamento · alometria de bacias hidrográficas" },
+    { period: "2022 — 2025", title: "Bacharelado em Ciência da Computação", org: "UNIFOR · TCC com YOLOv11" },
   ],
   career: [
-    { year: "2026", type: "feat", scope: "s4e", msg: "assume a modernização do ERP legado como Engenheiro de Software Sênior", job: 0 },
-    { year: "2026", type: "feat", scope: "mestrado", msg: "inicia Mestrado em Informática Aplicada (UNIFOR · em andamento)" },
-    { year: "2025", type: "release", scope: "formacao", msg: "conclui Bacharelado em Ciência da Computação na UNIFOR" },
-    { year: "2025", type: "feat", scope: "unichristus", msg: "promovido a Desenvolvedor Full Stack", job: 1 },
-    { year: "2023", type: "feat", scope: "unichristus", msg: "começa como estagiário full stack", job: 2 },
+    { year: "2026", type: "feat", scope: "s4e", msg: "jun/2026: Engenheiro de Software Sênior na S4E, liderando um time de 5 na modernização do ERP legado", job: 0 },
+    { year: "2026", type: "feat", scope: "mestrado", msg: "inicia Mestrado em Informática Aplicada (UNIFOR, 2026–2027): alometria de bacias hidrográficas" },
+    { year: "2025", type: "release", scope: "formacao", msg: "conclui Bacharelado em Ciência da Computação na UNIFOR (TCC: YOLOv11, mAP@50 0,696)" },
+    { year: "2024", type: "feat", scope: "christus", msg: "set/2024: promovido a Desenvolvedor de Software Full Stack II no Colégio Christus", job: 1 },
+    { year: "2023", type: "feat", scope: "christus", msg: "out/2023: efetivado como Desenvolvedor de Software Full Stack I no Colégio Christus", job: 2 },
+    { year: "2023", type: "feat", scope: "christus", msg: "mar/2023: começa como Estagiário de Desenvolvimento de Software no Colégio Christus", job: 3 },
     { year: "2022", type: "chore", scope: "formacao", msg: "init: Ciência da Computação na UNIFOR" },
+    { year: "2021", type: "feat", scope: "sandie", msg: "mar/2021: começa como Desenvolvedor Web freelancer (cliente Sandie)", job: 4 },
   ],
   toolbox: [
     { group: "Linguagens", items: ["Java", "Go", "Python", "TypeScript", "JavaScript", "C#", "C", "Clojure (por diversão)"] },
@@ -312,10 +343,10 @@ export const pt: Copy = {
     { group: "Frontend", items: ["Angular", "React", "Svelte", "Next.js", "Tiptap / ProseMirror", "SCSS", "Web Components"] },
     {
       group: "IA",
-      items: ["LLMs", "RAG", "LangChain / LangGraph", "HuggingFace", "BERTimbau", "Gemini e Anthropic API", "YOLO · SAM2 · OpenCV", "OCR · ICR · TTS", "PyTorch · TensorFlow"],
+      items: ["LLMs · agentes · MCP", "RAG", "LangChain / LangGraph", "HuggingFace", "BERTimbau", "Gemini e Anthropic API", "YOLO · SAM2 · OpenCV", "OCR · ICR · TTS", "PyTorch · TensorFlow"],
     },
     { group: "Dados & Infra", items: ["PostgreSQL · pgvector", "MongoDB", "Docker", "Kubernetes", "GCP", "CI/CD", "GitFlow"] },
-    { group: "Processo", items: ["Microsserviços", "DDD", "SOLID", "TDD", "AS-IS / TO-BE", "ADR", "Scrum"] },
+    { group: "Processo", items: ["Microsserviços", "DDD", "SOLID", "TDD", "AS-IS / TO-BE", "ADR", "Liderança técnica", "Scrum"] },
   ],
   principles: [
     {
@@ -334,12 +365,12 @@ export const pt: Copy = {
     { title: "Incomodou duas vezes, vira ferramenta", text: "Atrito pequeno e recorrente custa caro. Por isso escrevo CLIs pequenas para o time." },
     { title: "Code review é mentoria assíncrona", text: "Comento o porquê, aponto o padrão e deixo o link para o guia." },
   ],
-  labels: ["full-stack", "ia-aplicada", "legado", "pesquisa"],
+  labels: ["backend", "ia-aplicada", "legado", "liderança"],
   checklist: [
-    "3+ anos em produção, de estagiário a engenheiro sênior",
-    "Arquitetura de microsserviços em Java e Go",
-    "IA aplicada em etapas reais (OCR, ICR, TTS, LLMs, visão computacional)",
-    "Duas publicações e mestrado em andamento",
+    "5+ anos de experiência, de freelancer em 2021 a engenheiro sênior",
+    "Microsserviços em Java (Spring Boot) e Go, com APIs REST/gRPC",
+    "IA aplicada em produção: agentes LLM, BERTimbau, MCP, OCR, ICR e TTS",
+    "Mestrado em andamento e duas apresentações orais aceitas (UNIFOR, out/2026)",
   ],
   ui: ptUi,
 };

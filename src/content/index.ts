@@ -9,10 +9,11 @@ export const profile = {
   name: "Thiago de Oliveira Sampaio",
   short: "Thiago Sampaio",
   email: "thiagooliveira1039@gmail.com",
-  linkedin: "https://linkedin.com/in/thiago-de-oliveira-sampaio",
+  linkedin: "https://www.linkedin.com/in/thiago-de-oliveira-sampaio-0085a8239",
   github: "https://github.com/skaduhs5232",
   githubUser: "skaduhs5232",
   cv: "/assets/Thiago_Sampaio_Curriculo.pdf",
+  cvEn: "/assets/Thiago_Sampaio_Resume.pdf",
 };
 
 const gh = (name: string): Link => ({ type: "repo", url: `https://github.com/skaduhs5232/${name}` });
@@ -29,14 +30,14 @@ type ProjectBase = {
 };
 
 const base = [
-  { id: "exitus", featured: true, status: "production", year: "2023–2026", stack: ["Java", "Spring Boot", "Go", "Angular", "React", "PostgreSQL", "Docker", "GCP"], links: [] },
+  { id: "exitus", featured: true, status: "production", year: "2023–2026", stack: ["Java", "Spring Boot", "Go", "Angular", "React", "PostgreSQL", "Docker", "Kubernetes", "GCP"], links: [] },
   {
     id: "tiptap",
     featured: true,
     status: "production",
     year: "2024–2025",
     image: "/assets/images/tiptap.png",
-    stack: ["TypeScript", "Tiptap", "Angular", "Go"],
+    stack: ["TypeScript", "Tiptap", "Angular", "Go", "HunspellGo"],
     repo: "Tiptap-Exitus",
     links: [gh("Tiptap-Exitus"), { type: "demo", url: "https://skaduhs5232.github.io/Tiptap-Exitus/" }],
   },
@@ -55,7 +56,7 @@ const base = [
     status: "research",
     year: "2025",
     image: "/assets/images/tcc.png",
-    stack: ["Python", "PyTorch", "YOLO", "SAM2"],
+    stack: ["Python", "PyTorch", "YOLOv11", "SAM2", "Roboflow"],
     links: [{ type: "doc", url: "https://docs.google.com/document/d/135hKU4kXx79qQM8UIhOlumm-Gogv4NxMAWD9JkFKl04/edit?usp=sharing" }],
   },
   {
@@ -76,8 +77,8 @@ const base = [
     repo: "ticket-maker",
     links: [gh("ticket-maker"), { type: "demo", url: "https://skaduhs5232.github.io/ticket-maker/" }],
   },
-  { id: "cca", status: "research", year: "2026", stack: ["Python", "SciPy", "Jupyter"], repo: "CCA", links: [gh("CCA")] },
-  { id: "intent", status: "research", year: "2025", stack: ["Python", "BERTimbau", "HuggingFace", "Gemini API"], links: [] },
+  { id: "cca", status: "research", year: "2026", stack: ["Python", "SciPy", "NumPy"], repo: "CCA", links: [gh("CCA")] },
+  { id: "intent", status: "research", year: "2025", stack: ["Python", "BERTimbau", "Hugging Face", "LLMs", "MCP"], links: [] },
   { id: "medsystem", status: "production", year: "2025", stack: ["React", "Node.js", "PostgreSQL", "RabbitMQ"], links: [] },
   { id: "optasks", status: "oss", year: "2026", stack: ["TypeScript", "Node.js"], repo: "npx-cli-openProject", links: [gh("npx-cli-openProject")] },
   { id: "bancosync", status: "oss", year: "2026", stack: ["Node.js", "PostgreSQL", "Gemini API"], repo: "cli-sync-banco", links: [gh("cli-sync-banco")] },
@@ -89,7 +90,7 @@ const base = [
     repo: "Directive-Angular-KaTeX-interpreter",
     links: [gh("Directive-Angular-KaTeX-interpreter")],
   },
-  { id: "spell", status: "production", year: "2025", stack: ["Go", "Docker"], repo: "spell-checker-golang", links: [gh("spell-checker-golang")] },
+  { id: "spell", status: "production", year: "2025", stack: ["Go", "HunspellGo", "Docker"], repo: "spell-checker-golang", links: [gh("spell-checker-golang")] },
   { id: "pokeia", status: "lab", year: "2026", stack: ["Python", "Sentence-Transformers", "FAISS"], repo: "pokeIA", links: [gh("pokeIA")] },
   {
     id: "sqlguard",

@@ -110,7 +110,7 @@ export default function PullRequest({ c, lang, setLang, palette, setPalette }: P
         <div className="pr-top-right">
           <Prefs c={c} lang={lang} setLang={setLang} palette={palette} setPalette={setPalette} />
           <nav className="pr-top-actions" aria-label={ui.shortcuts}>
-            <a className="pr-btn" href={profile.cv} download hrefLang="pt-BR">
+            <a className="pr-btn" href={lang === "en" ? profile.cvEn : profile.cv} download hrefLang={lang === "en" ? "en" : "pt-BR"}>
               {ui.cv}
             </a>
             <a className="pr-btn" href={profile.github} target="_blank" rel="noopener">
@@ -471,8 +471,13 @@ function Conversation({ c, commits, data, failed, openTab }: ConvProps) {
             </a>
           </p>
           <p>
+            <a href={profile.cvEn} download hrefLang="en">
+              Thiago_Sampaio_Resume.pdf
+            </a>
+          </p>
+          <p>
             <a href={profile.linkedin} target="_blank" rel="noopener">
-              linkedin.com/in/thiago-de-oliveira-sampaio
+              linkedin.com/in/thiago-de-oliveira-sampaio-0085a8239
             </a>
           </p>
         </div>
