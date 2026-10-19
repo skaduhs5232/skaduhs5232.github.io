@@ -6,7 +6,7 @@ const enUi: typeof ptUi = {
   org: "your-company",
   repo: "engineering-team",
   shortcuts: "Shortcuts",
-  cv: "Résumé PDF (in Portuguese)",
+  cv: "Résumé PDF",
   title: (role) => `Hire Thiago Sampaio as ${role}`,
   open: "Open",
   mergeInto: (n) => `wants to merge ${n} commits into`,
@@ -89,26 +89,27 @@ const enUi: typeof ptUi = {
 
 export const en: Copy = {
   meta: {
-    title: "Thiago Sampaio · Senior Software Engineer",
-    description: "Thiago de Oliveira Sampaio, Senior Software Engineer in Fortaleza, Brazil. Full stack, applied AI and legacy system modernization.",
+    title: "Thiago Sampaio · Backend Software Engineer",
+    description:
+      "Thiago de Oliveira Sampaio, backend software engineer in Fortaleza, Brazil. Java, Spring Boot, Go, microservices, legacy modernization, technical leadership and applied AI (LLM agents). 5+ years.",
   },
-  role: "Senior Software Engineer",
+  role: "Backend Software Engineer",
   bio: [
-    "I build software that has to last: education platforms serving several institutions, legacy ERPs turned into modern architecture without stopping operations and, in my spare time, AI models that recognize hand-drawn Pokémon.",
-    "Today I lead the modernization of a legacy ERP at S4E. Before that, I spent over three years at UniChristus, going from intern to full stack developer, designing Java and Go microservices and putting OCR, ICR and TTS to work grading exams. I hold a B.Sc. in Computer Science and I'm pursuing an M.Sc. in Applied Informatics at UNIFOR.",
+    "Software engineer with 5+ years of experience (since 2021; on product teams since 2023), focused on backend: Java (Spring Boot), Go, microservices and REST/gRPC APIs. I work on legacy modernization, technical leadership and applied AI, including LLM agents running in production.",
+    "Since June 2026 I have been a Senior Software Engineer at S4E, technically leading a team of 5 modernizing a legacy ERP: AS-IS/TO-BE, target architecture, ADRs and API contracts. Before that, at Colégio Christus, I grew from intern to Full Stack Developer II and designed microservices for Exitus, a multi-tenant education ecosystem with 12 modules serving about 11,000 students at Christus and 3 other schools. I hold a B.Sc. in Computer Science and I'm an M.Sc. candidate in Applied Informatics at UNIFOR (2026–2027), researching river-basin allometry.",
   ],
   now: [
     {
       title: "Modernizing a legacy ERP",
-      text: "At S4E since August 2026: I map the AS-IS, design the TO-BE and turn tacit knowledge into ADRs, API contracts and guides.",
+      text: "At S4E since June 2026, I technically lead a team of 5: I map the AS-IS with business teams, design the TO-BE and record the target architecture as ADRs and API contracts.",
     },
     {
-      title: "Cities, river basins and urban waste",
-      text: "I cluster cities with the City Clustering Algorithm and cross them with river basin discharge potential to predict how much plastic reaches rivers.",
+      title: "River-basin allometry and Zipf's law",
+      text: "Main M.Sc. research (UNIFOR, 2026–2027): river-basin allometry. Side article: Zipf's law in Brazilian urban areas delimited with the City Clustering Algorithm — an exponent of about 1.00 (4,702 patches) and 0.92 in the Northeast (1,729).",
     },
     {
-      title: "LLMs without provider lock-in",
-      text: "Professor Oak switches from local Ollama to any OpenAI-compatible API by changing 3 environment variables.",
+      title: "Educational chatbots on Exitus",
+      text: "In production: a BERTimbau gatekeeper routes each message to specialist agents with tools and MCP, with conversation auditing and LLM cost control.",
     },
   ],
   status: { production: "in production", oss: "open source", research: "research", lab: "experiment" },
@@ -119,22 +120,22 @@ export const en: Copy = {
       role: "Full Stack · architecture",
       metric: { value: "12", label: "integrated modules" },
       summary:
-        "Multi-tenant education platform serving several institutions from a single codebase: assessments, content editor, automated grading, messaging and more.",
+        "Multi-tenant education ecosystem with 12 integrated modules (assessments, content editor, automated grading, messaging and more), used by about 11,000 students at Colégio Christus and 3 other schools.",
       points: [
-        "Java (Spring Boot) and Go microservices with independent deploys per domain.",
-        "OCR, ICR and TTS pipelines that generate, read and grade exams with no manual steps.",
-        "Modernized legacy modules, integrating internal and external systems through APIs.",
+        "Java (Spring Boot) and Go microservices, with independent deployments per domain.",
+        "Educational chatbot platform in production: a BERTimbau gatekeeper routes each message to specialist agents with tools and MCP, with conversation auditing and LLM cost control.",
+        "OCR, ICR and Text-to-Speech in assessment generation, reading and grading.",
+        "Modernized legacy modules and integrated internal and external systems via REST APIs.",
       ],
     },
     tiptap: {
-      title: "Exitus Editor",
-      role: "Author · library",
+      title: "Tiptap-Exitus",
+      role: "Co-author · with Marcelino Braga",
       summary:
-        "Rich-text editor built on Tiptap/ProseMirror with formulas, images and content tooling, used as the single editor across several modules.",
+        "Open-source rich-text editor library on Tiptap/ProseMirror, co-developed with Marcelino Braga and adopted as the single editor across several Exitus modules.",
       points: [
-        "Minimal setup: one HTML element and one JS file.",
-        "Built-in spell checker served by a Go microservice.",
-        "Custom extensions for assessment content.",
+        "In production as the single editor across several Exitus modules.",
+        "Spell checker I built on my own: a Go microservice using HunspellGo, deployed independently.",
       ],
     },
     profoak: {
@@ -150,14 +151,15 @@ export const en: Copy = {
       ],
     },
     pavimento: {
-      title: "Asphalt pavement distress detection",
-      role: "Researcher · undergraduate thesis",
-      metric: { value: "93.2%", label: "precision" },
-      summary: "Computer vision that detects and segments road defects from photos, with a hand-annotated custom dataset.",
+      title: "Asphalt pavement defect detection",
+      role: "Researcher · B.Sc. thesis",
+      metric: { value: "0.696", label: "test mAP@50" },
+      summary:
+        "B.Sc. thesis in Computer Science (UNIFOR), advised by Prof. Túlio Rodrigues Ribeiro, M.Sc.: YOLOv11 detects potholes and patches in photos of Brazilian urban roads.",
       points: [
-        "YOLOv11X with transfer learning from COCO weights.",
-        "Segmentation with SAM2 and controlled fine-tuning against overfitting.",
-        "Custom dataset with 757 annotated images.",
+        "YOLOv11X with transfer learning from COCO weights and data augmentation, on a custom dataset of 757 images annotated with SAM2 assistance.",
+        "On the test set: mAP@50 of 0.696 (0.628 for the baseline), mAP@50-95 of 0.503 and precision of 0.853. Precision on the pothole class was 0.932.",
+        "Accepted for an oral presentation at UNIFOR's XXVI Graduate Research Meeting (Oct 2026).",
       ],
     },
     pokeguess: {
@@ -174,29 +176,31 @@ export const en: Copy = {
       points: ["Document ingestion with clean reindexing and configurable directories.", "Versioned Alembic migrations on PostgreSQL + pgvector."],
     },
     cca: {
-      title: "City Clustering Algorithm",
+      title: "River-basin allometry and Zipf's law",
       role: "Researcher · M.Sc.",
-      metric: { value: "10⁶+", label: "sites processed" },
-      summary: "CCA for regionalization: groups census tracts or population pixels into urban clusters by density and haversine distance.",
+      metric: { value: "4,702", label: "urban patches in Brazil" },
+      summary:
+        "Main research of the M.Sc. in Applied Informatics (UNIFOR, 2026–2027): river-basin allometry, the scaling relationships that link basin properties to spatial data. Side article on Zipf's law in Brazilian urban areas.",
       points: [
-        "KD-tree on the sphere: same result as the pairwise loop, running on millions of sites.",
-        "Works with points (census tracts) and rasters (GPW).",
+        "Urban patches delimited with the City Clustering Algorithm (CCA) on gridded population data.",
+        "Results so far: 4,702 patches in Brazil, exponent about 1.00; in the Northeast, 1,729 patches, exponent 0.92.",
       ],
     },
     intent: {
-      title: "Student message intent",
-      role: "Researcher",
-      summary: "NLP pipeline that classifies student messages by intent and decides which AI flow answers.",
+      title: "Educational chatbots with specialist agents (Exitus)",
+      role: "Author",
+      summary:
+        "Educational chatbot platform running in production on Exitus. A BERTimbau classifier acts as the gatekeeper and routes each message to the right specialist agent.",
       points: [
-        "BERTimbau fine-tuning with HuggingFace.",
-        "Gemini orchestration based on the detected category.",
-        "Published at UNIFOR's 26th Graduate Studies and Research Meeting.",
+        "BERTimbau fine-tuned with Hugging Face identifies intent and routes to specialist agents with tools and MCP servers.",
+        "Conversation auditing and LLM cost monitoring.",
+        "The characterization of student–agent interactions was accepted for an oral presentation at UNIFOR's XXVI Graduate Research Meeting (Oct 2026).",
       ],
     },
     medsystem: {
       title: "Med System",
       role: "Full Stack",
-      summary: "Support for external physicians and UniChristus students: clinical care, diagnostic support, prescriptions and medical routines.",
+      summary: "Support for external physicians and Universidade Christus students: clinical care, diagnostic support and prescriptions.",
       points: ["RabbitMQ messaging between Node.js services.", "React + Tailwind interface built for use during appointments."],
     },
     optasks: {
@@ -220,8 +224,8 @@ export const en: Copy = {
     spell: {
       title: "Go spell checker",
       role: "Author",
-      summary: "Containerized Go microservice that provides spell checking to Exitus Editor.",
-      points: ["Isolated service with deploys independent from the editor."],
+      summary: "Go microservice using HunspellGo that spell-checks Tiptap-Exitus. I built it on my own, with a deploy independent from the editor.",
+      points: ["Isolated service, in production as part of the editor used across several Exitus modules."],
     },
     pokeia: {
       title: "PokeIA",
@@ -268,43 +272,70 @@ export const en: Copy = {
   },
   jobs: [
     {
-      period: "Aug 2026 — present",
+      period: "Jun 2026 — present",
       role: "Senior Software Engineer",
       org: "S4E",
       points: [
-        "I lead the team modernizing a legacy ERP, from AS-IS/TO-BE mapping to production delivery.",
-        "I write ADRs, diagrams and API contracts that reduce reliance on tacit knowledge.",
-        "I set standards through code review, mentoring and alignment across squads.",
+        "Technically lead a team of 5 modernizing a legacy ERP, delivering in increments that run alongside the current system.",
+        "Map AS-IS flows with business teams and design the TO-BE scenarios that guide the migration.",
+        "Define the target architecture and the API contracts between modernized modules.",
+        "Record technical decisions as ADRs, architecture diagrams and standards guides.",
+        "Run code reviews and technical mentoring, and align development standards across squads.",
       ],
     },
     {
-      period: "Jan 2025 — Aug 2026",
-      role: "Full Stack Developer",
-      org: "UniChristus",
+      period: "Sep 2024 — Jun 2026",
+      role: "Full Stack Software Developer II",
+      org: "Colégio Christus",
       points: [
-        "Designed Java (Spring Boot) and Go microservices with independent deploys.",
-        "Integrated OCR, ICR and Text-to-Speech to generate, read and grade assessments.",
-        "Led architecture and code review with Docker, CI/CD and GCP.",
+        "Designed Java (Spring Boot) and Go microservices for Exitus, with 12 modules serving about 11,000 students at Christus and 3 other schools.",
+        "Built the educational chatbot platform in production: BERTimbau gatekeeper, specialist agents with tools and MCP, auditing and LLM cost control.",
+        "Integrated OCR, ICR and Text-to-Speech into assessment generation, reading and grading.",
+        "Co-developed Tiptap-Exitus with Marcelino Braga; I solely built its Go spell checker using HunspellGo.",
+        "Led architecture, code review and engineering practices with Docker, Kubernetes, CI/CD and GCP.",
       ],
     },
     {
-      period: "Mar 2023 — Dec 2024",
-      role: "Full Stack Intern",
-      org: "UniChristus",
-      points: ["Shipped features in Angular, React and Vue in two-week cycles.", "Optimized Spring Boot APIs and high-volume PostgreSQL queries."],
+      period: "Oct 2023 — Sep 2024",
+      role: "Full Stack Software Developer I",
+      org: "Colégio Christus",
+      points: [
+        "Built end-to-end features: business rules and data access in Java and SQL; screens in Angular and TypeScript.",
+        "Maintained and evolved production features in agile cycles with the team.",
+      ],
+    },
+    {
+      period: "Mar 2023 — Sep 2023",
+      role: "Software Development Intern",
+      org: "Colégio Christus",
+      points: [
+        "Optimized REST APIs (Spring Boot) and PostgreSQL queries on high-volume endpoints.",
+        "Delivered features with Angular, React and Vue in biweekly cycles, validated by stakeholders.",
+        "Hired as Full Stack Developer I at the end of the internship.",
+      ],
+    },
+    {
+      period: "Mar 2021 — Mar 2023",
+      role: "Web Developer (Freelance)",
+      org: "Sandie",
+      points: [
+        "Built and maintained Sandie's website end to end: design, front end and back end, hosting, technical SEO, performance, responsiveness and support.",
+      ],
     },
   ],
   education: [
-    { period: "2026 — 2027", title: "M.Sc. in Applied Informatics", org: "UNIFOR · in progress" },
-    { period: "2022 — 2025", title: "B.Sc. in Computer Science", org: "UNIFOR" },
+    { period: "2026 — 2027", title: "M.Sc. in Applied Informatics", org: "UNIFOR · in progress · river-basin allometry" },
+    { period: "2022 — 2025", title: "B.Sc. in Computer Science", org: "UNIFOR · thesis with YOLOv11" },
   ],
   career: [
-    { year: "2026", type: "feat", scope: "s4e", msg: "take on the legacy ERP modernization as Senior Software Engineer", job: 0 },
-    { year: "2026", type: "feat", scope: "masters", msg: "start M.Sc. in Applied Informatics (UNIFOR · in progress)" },
-    { year: "2025", type: "release", scope: "degree", msg: "complete B.Sc. in Computer Science at UNIFOR" },
-    { year: "2025", type: "feat", scope: "unichristus", msg: "promoted to Full Stack Developer", job: 1 },
-    { year: "2023", type: "feat", scope: "unichristus", msg: "start as full stack intern", job: 2 },
+    { year: "2026", type: "feat", scope: "s4e", msg: "Jun 2026: Senior Software Engineer at S4E, technically leading a team of 5 on the legacy ERP modernization", job: 0 },
+    { year: "2026", type: "feat", scope: "masters", msg: "start M.Sc. in Applied Informatics (UNIFOR, 2026–2027): river-basin allometry" },
+    { year: "2025", type: "release", scope: "degree", msg: "complete B.Sc. in Computer Science at UNIFOR (thesis: YOLOv11, mAP@50 0.696)" },
+    { year: "2024", type: "feat", scope: "christus", msg: "Sep 2024: promoted to Full Stack Software Developer II at Colégio Christus", job: 1 },
+    { year: "2023", type: "feat", scope: "christus", msg: "Oct 2023: hired as Full Stack Software Developer I at Colégio Christus", job: 2 },
+    { year: "2023", type: "feat", scope: "christus", msg: "Mar 2023: start as Software Development Intern at Colégio Christus", job: 3 },
     { year: "2022", type: "chore", scope: "degree", msg: "init: Computer Science at UNIFOR" },
+    { year: "2021", type: "feat", scope: "sandie", msg: "Mar 2021: start as a freelance web developer (client Sandie)", job: 4 },
   ],
   toolbox: [
     { group: "Languages", items: ["Java", "Go", "Python", "TypeScript", "JavaScript", "C#", "C", "Clojure (for fun)"] },
@@ -312,10 +343,10 @@ export const en: Copy = {
     { group: "Frontend", items: ["Angular", "React", "Svelte", "Next.js", "Tiptap / ProseMirror", "SCSS", "Web Components"] },
     {
       group: "AI",
-      items: ["LLMs", "RAG", "LangChain / LangGraph", "HuggingFace", "BERTimbau", "Gemini and Anthropic APIs", "YOLO · SAM2 · OpenCV", "OCR · ICR · TTS", "PyTorch · TensorFlow"],
+      items: ["LLMs · agents · MCP", "RAG", "LangChain / LangGraph", "HuggingFace", "BERTimbau", "Gemini and Anthropic APIs", "YOLO · SAM2 · OpenCV", "OCR · ICR · TTS", "PyTorch · TensorFlow"],
     },
     { group: "Data & Infra", items: ["PostgreSQL · pgvector", "MongoDB", "Docker", "Kubernetes", "GCP", "CI/CD", "GitFlow"] },
-    { group: "Process", items: ["Microservices", "DDD", "SOLID", "TDD", "AS-IS / TO-BE", "ADR", "Scrum"] },
+    { group: "Process", items: ["Microservices", "DDD", "SOLID", "TDD", "AS-IS / TO-BE", "ADR", "Technical leadership", "Scrum"] },
   ],
   principles: [
     {
@@ -334,12 +365,12 @@ export const en: Copy = {
     { title: "If it bothers me twice, it becomes a tool", text: "Small, recurring friction is expensive. That's why I write small CLIs for the team." },
     { title: "Code review is asynchronous mentoring", text: "I explain the why, point to the pattern and leave a link to the guide." },
   ],
-  labels: ["full-stack", "applied-ai", "legacy", "research"],
+  labels: ["backend", "applied-ai", "legacy", "leadership"],
   checklist: [
-    "3+ years in production, from intern to senior engineer",
-    "Microservice architecture in Java and Go",
-    "AI applied to real steps (OCR, ICR, TTS, LLMs, computer vision)",
-    "Two published papers and an M.Sc. in progress",
+    "5+ years of experience, from freelance in 2021 to senior engineer",
+    "Microservices in Java (Spring Boot) and Go, with REST/gRPC APIs",
+    "Applied AI in production: LLM agents, BERTimbau, MCP, OCR, ICR and TTS",
+    "M.Sc. in progress and two oral presentations accepted (UNIFOR, Oct 2026)",
   ],
   ui: enUi,
 };
